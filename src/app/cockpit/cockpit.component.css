@@ -1,0 +1,22 @@
+button{
+    margin:0 1rem 0 1rem;
+}
+h1{
+    color:red;
+    border-style: ridge;
+    border-width: 5px;
+    border-radius: 10px;
+    width: fit-content;
+    font-size: 4rem;
+    background-color:rgb(255, 252, 66);
+    border-color: rgb(77, 51, 219);
+    line-height: 1.75;
+    text-shadow: 2px 2px 2px black;
+    padding:0 30px ;
+    background-image: linear-gradient(to top left,
+                                      rgba(33, 221, 26, 0.931),
+                                      rgba(55, 215, 226, 0.945) 30%,
+                                      rgb(255, 49, 238));
+    box-shadow: inset 2px 2px 3px rgba(51, 247, 12, 0.945),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}

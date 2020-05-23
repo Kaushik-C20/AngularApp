@@ -1,0 +1,58 @@
+<div class="container">
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (bpcreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="check_changeNum()">Change Element</button>
+      <button class="btn btn-danger" (click)="check_DestNum()">Destroy Component</button>
+      <br>
+      <!-- index of element to change/destroy -->
+      <label *ngIf="(isdestrindexneeded === true) || (ismodindexneeded === true)">Element Number : </label>
+      <input type="text" 
+      class="form-control-sm"
+      *ngIf="(isdestrindexneeded === true) || (ismodindexneeded === true)"
+      [(ngModel)]="index">
+      
+      <!-- change button -->
+      <button class="btn btn-primary"
+      *ngIf="ismodindexneeded === true"
+      (click)="modAct()">Change Element</button>
+      <!-- destroy button -->
+      <button class="btn btn-danger"
+      *ngIf="isdestrindexneeded === true"
+      (click)="destAct()">Destroy Element</button>
+
+      <!-- To_change form -->
+      <label *ngIf="isChangeneeded === true" style="color:coral;">New ServerName</label>
+      <input type="text" 
+      class="form-control"
+      *ngIf="isChangeneeded === true"
+      #newName>
+      <label *ngIf="isChangeneeded === true" style="color:lawngreen;">New Server Content</label>
+      <input type="text" 
+      class="form-control"
+      *ngIf="isChangeneeded === true"
+      #newContent>
+      <button class="btn btn-danger btn-lg" 
+      *ngIf="isChangeneeded === true"
+      (click)="ChangeEl()">
+        Change
+      </button>
+
+      <hr>
+
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"
+        [name]="serverElement.name">
+        <p #contentParagraph>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+      </app-server-element>
+    </div>
+  </div>
+</div>

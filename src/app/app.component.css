@@ -1,0 +1,18 @@
+.container {
+  margin-top: 0;
+  background-color: rgb(255, 246, 231);
+}
+
+p {
+  color: blue;
+}
+button{
+  margin:0 1rem 2rem;
+}
+input{
+  margin-bottom: 2rem;
+  display: block;
+}
+hr{
+  border-color:black ;
+}
